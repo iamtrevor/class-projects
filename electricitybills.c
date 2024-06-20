@@ -1,12 +1,12 @@
-// aprogram to display electricity bills
+// a program to display electricity bills
 #include <stdio.h>
 int main() {
     int customerID, unit_consumed;
     float charges_per_unit, supercharge, price;
-    char str[100];
+    char str[100];                              
 
     printf("Please enter customerID\n");
-    scanf("%s", &customerID);
+    scanf("%d", &customerID);
 
     printf("Please enter your name\n");
     scanf("%s", str);
@@ -17,27 +17,27 @@ int main() {
 
     if(unit_consumed >= 100 && unit_consumed <= 199){
         charges_per_unit = unit_consumed * 1.20;
-        price = unit_consumed + charges_per_unit;
+        price =  charges_per_unit;
         printf("The total price will be %.2f\n", price);
     }
     
     else if(unit_consumed >= 200 && unit_consumed < 400){
         charges_per_unit = unit_consumed * 1.50;
-        price = unit_consumed + charges_per_unit;
+        price =  charges_per_unit;
         printf("The total price will be %.2f\n",price);
     }
     
     else if(unit_consumed > 400 && unit_consumed < 600){
         charges_per_unit = unit_consumed * 1.80;
         supercharge = 0.15 * unit_consumed;
-        price = unit_consumed + (charges_per_unit + supercharge);
+        price = charges_per_unit + supercharge;
         printf("The total price will be %.2f\n", price);
     }
     
     else if (unit_consumed >= 600){
         charges_per_unit = unit_consumed * 2.00;
         supercharge = 0.15 * unit_consumed;
-        price = unit_consumed + (charges_per_unit + supercharge);
+        price = charges_per_unit + supercharge;
         printf("The total price will be %.2f\n", price); 
 
     }
@@ -48,3 +48,6 @@ int main() {
 
     return 0;
 }
+
+
+
